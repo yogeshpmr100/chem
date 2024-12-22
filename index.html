@@ -1,0 +1,83 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChemQuiz AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <i class="fas fa-atom"></i>
+                <span>ChemQuiz AI</span>
+            </div>
+            <nav>
+                <a href="#" class="active"><i class="fas fa-home"></i> Practice</a>
+                <a href="#"><i class="fas fa-chart-bar"></i> Progress</a>
+                <a href="#"><i class="fas fa-book"></i> Study Notes</a>
+                <a href="#"><i class="fas fa-cog"></i> Settings</a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header>
+                <div class="progress-info">
+                    <div class="progress-bar">
+                        <div class="progress" id="progress-fill"></div>
+                    </div>
+                    <div class="stats">
+                        <span>Score: <b id="score">0</b></span>
+                        <span>Question: <b id="questionNumber">1</b>/50</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="quiz-section">
+                <div class="question-card">
+                    <p id="question-text"></p>
+                    <div class="options-grid">
+                        <button class="option" onclick="checkAnswer(0)"></button>
+                        <button class="option" onclick="checkAnswer(1)"></button>
+                        <button class="option" onclick="checkAnswer(2)"></button>
+                        <button class="option" onclick="checkAnswer(3)"></button>
+                    </div>
+                    <div class="navigation">
+                        <button id="prev-btn" onclick="previousQuestion()">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </button>
+                        <button id="next-btn" onclick="nextQuestion()">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Assistant Chat -->
+            <div class="ai-assistant">
+                <div class="ai-header">
+                    <i class="fas fa-robot"></i>
+                    <span>Chemistry AI Assistant</span>
+                </div>
+                <div class="chat-container" id="chat-container">
+                    <div class="ai-message">
+                        Hello! I'm your Chemistry AI assistant. Need help understanding any concept?
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="user-input" placeholder="Ask me anything about chemistry...">
+                    <button onclick="sendMessage()">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
